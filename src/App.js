@@ -12,7 +12,7 @@ function App() {
       <Messages name="Messages" unread={0} />
       <Messages name="Notifications" unread={10} />
       <TheDate />
-      <Counter />
+      <Counter count={0} />
     </div>
   );
 }

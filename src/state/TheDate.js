@@ -4,7 +4,8 @@ class TheDate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      datetime: new Date()
+      datetime: new Date(),
+      step: 1
     };
     console.log("constructor");
   }
