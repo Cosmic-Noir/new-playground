@@ -11,6 +11,10 @@ class RouletteGun extends React.Component {
     };
   }
 
+  componentWillUnmount() {
+    clearInterval(this.chamber);
+  }
+
   randomNum = () => {
     let random = Math.floor(Math.random() * 9);
     this.setState({ chamber: random });
@@ -28,7 +32,7 @@ class RouletteGun extends React.Component {
       spinningTheChamber: true,
       message: "Spinning the chamber and pulling the trigger...!"
     });
-    setTimeout(this.randomNum(), 3000);
+    setTimeout(this.randomNum, 3000);
   };
 
   render() {
