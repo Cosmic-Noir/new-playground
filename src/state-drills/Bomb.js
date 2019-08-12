@@ -11,7 +11,7 @@ class Bomb extends React.Component {
   componentDidMount() {
     setInterval(() => {
       let newCount = this.state.count + 1;
-      console.log(newCount);
+      // console.log(newCount);
       this.setState({ count: newCount });
     }, 1000);
   }
@@ -22,10 +22,10 @@ class Bomb extends React.Component {
 
   bombNoise() {
     let word;
-    if (this.state.count % 8 == 0) {
+    if (this.state.count % 8 === 0) {
       word = "BOOM!!!";
       clearInterval(this.interval);
-    } else if (this.state.count % 2 == 0) {
+    } else if (this.state.count % 2 === 0) {
       word = "tick.";
     } else {
       word = "tock.";
