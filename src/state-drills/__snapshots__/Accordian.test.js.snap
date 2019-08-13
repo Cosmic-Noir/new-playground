@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordian component renders empty given no input 1`] = `<ul />`;
+
+exports[`Accordian component renders the first content section 1`] = `
+<ul>
+  <button
+    key="0"
+    onClick={[Function]}
+  >
+    Section 1
+  </button>
+  <button
+    key="1"
+    onClick={[Function]}
+  >
+    Section 2
+  </button>
+  <button
+    key="2"
+    onClick={[Function]}
+  >
+    Section 3
+  </button>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </p>
+</ul>
+`;
+
+exports[`Accordian component renders the second listItems content 1`] = `
+<ul>
+  <button
+    key="0"
+    onClick={[Function]}
+  >
+    Section 1
+  </button>
+  <button
+    key="1"
+    onClick={[Function]}
+  >
+    Section 2
+  </button>
+  <button
+    key="2"
+    onClick={[Function]}
+  >
+    Section 3
+  </button>
+  <p>
+    Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!
+  </p>
+</ul>
+`;
