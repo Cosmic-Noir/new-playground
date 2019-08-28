@@ -99,13 +99,15 @@ function doTask(name) {
 doTask("A").then(result => {
   console.log(result);
 });
-doTask("B").then(result => {
-  console.log(result);
-});
 
-doTask("C").then(result => {
-  console.log(result);
-});
+doTask("B")
+  .then(result => {
+    console.log(result);
+    return doTask("C");
+  })
+  .then(result => {
+    console.log(result);
+  });
 
 doTask("D").then(result => {
   console.log(result);
