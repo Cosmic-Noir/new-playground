@@ -14,11 +14,25 @@ class DemonymApp extends Component {
 
   componentDidMount() {
     fetch("https://country.register.gov.uk/records.json?page-size=5000")
+      .then(response => {
+        console.log("Checking for errors...");
+        if (!response.ok) {
+          console.log("An error did occur, lets throw an error");
+          throw new Error("Something went wrong");
+        }
+        return response; // ok, so just continue
+      })
       .then(response => response.json())
       .then(data => {
         const countries = Object.keys(data).map(key => data[key].item[0]);
         this.setState({ countries });
       });
+  }
+
+  setSelected(selected) {
+    this.setState({
+      selected
+    });
   }
 
   render() {
@@ -33,7 +47,10 @@ class DemonymApp extends Component {
 
     return (
       <div className="demonym_app">
-        <CountrySelector countries={this.state.countries} />
+        <CountrySelector
+          countries={this.state.countries}
+          changeHandler={selected => this.setSelected(selected)}
+        />
         {demon}
       </div>
     );
