@@ -96,27 +96,37 @@ function doTask(name) {
 // const p2 = doTask("A");
 // console.log(p2);
 
-doTask("A").then(result => {
-  console.log(result);
-});
+// doTask("A").then(result => {
+//   console.log(result);
+// });
 
-doTask("B")
-  .then(result => {
-    console.log(result);
-    return doTask("C");
+// doTask("B")
+//   .then(result => {
+//     console.log(result);
+//     return doTask("C");
+//   })
+//   .then(result => {
+//     console.log(result);
+//     return doTask("D");
+//   })
+//   .then(result => {
+//     console.log(result);
+//   });
+
+// doTask("E").then(result => {
+//   console.log(result);
+// });
+
+// doTask("F").then(result => {
+//   console.log(result);
+// });
+
+Promise.all([doTask("A"), doTask("B"), doTask("C")])
+  .then(results => {
+    // first console.log results
+    results.forEach(result => console.log(result));
+    return doTask("D");
   })
   .then(result => {
     console.log(result);
   });
-
-doTask("D").then(result => {
-  console.log(result);
-});
-
-doTask("E").then(result => {
-  console.log(result);
-});
-
-doTask("F").then(result => {
-  console.log(result);
-});
